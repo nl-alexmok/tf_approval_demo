@@ -5,7 +5,7 @@ variable "region" {
   #default = "ap-southeast-2"
   #default = "us-east-2"
   #default = "eu-west-1"
-  default = "us-east-1" # Virginia
+  default = "ap-east-1"
   description = "the region where you want deploy the solution"
 }
 
