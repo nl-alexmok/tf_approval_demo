@@ -133,7 +133,7 @@
           ]
         },
         "Source": {
-          "Location": "https://github.com/giuseppeborgese/run-terraform-inside-aws-codebuild",
+          "Location": "https://github.com/nl-alexmok/tf_approval_demo",
           "Type": "GITHUB"
         },
         "TimeoutInMinutes": 10,
