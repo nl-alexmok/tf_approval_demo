@@ -43,24 +43,6 @@ resource "aws_route_table_association" "public_a" {
   route_table_id = "${aws_route_table.public_rt.id}"
 }
 
-resource "aws_instance" "demo_ec2" {
-  ami                         = "ami-09c5e030f74651050"
-  instance_type               = "t3.nano"
-  key_name                    = "alex-key"
-  associate_public_ip_address = true
-  subnet_id                   = "${aws_subnet.public_a.id}"
-  security_groups             = [aws_security_group.allow_ssh.id]
-
-  root_block_device {
-      encrypted   = true
-      volume_size = "10"
-  }
-
-  tags = {
-    Name = "terraform-demo-ec2"
-  }
-}
-
 resource "aws_security_group" "allow_ssh" {
   name        = "allow_ssh"
   description = "Allow SSH inbound traffic"
