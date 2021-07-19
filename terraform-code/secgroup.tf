@@ -69,12 +69,12 @@ resource "aws_security_group" "allow_ssh" {
 }
 
 resource "aws_instance" "demo_ec2" {
-  ami                         = "ami-09c5e030f74651050"
+  ami                         = "ami-0dc2d3e4c0f9ebd18"
   instance_type               = "t3.nano"
   key_name                    = "alex-key"
   associate_public_ip_address = true
   subnet_id                   = "${aws_subnet.public_a.id}"
-  security_groups             = [aws_security_group.allow_ssh.id]
+  security_groups             = "${aws_security_group.allow_ssh.id}"
 
   root_block_device {
       encrypted   = true
