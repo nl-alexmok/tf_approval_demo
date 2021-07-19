@@ -6,3 +6,10 @@ resource "aws_vpc" "demo" {
     Name = "terraform-demo-main-vpc"
   }
 }
+resource "aws_internet_gateway" "igw" {
+  vpc_id = aws_vpc.main.id
+
+  tags = {
+    Name = "terraform-demo-igw"
+  }
+}
