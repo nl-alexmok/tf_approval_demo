@@ -77,7 +77,7 @@ resource "aws_instance" "demo_ec2" {
 
   root_block_device {
       encrypted   = true
-      volume_size = "500"
+      volume_size = "100"
   }
 
   tags = {
