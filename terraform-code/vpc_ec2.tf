@@ -1,3 +1,8 @@
+policy "ec2_type_policy" {
+  source            = "https://raw.githubusercontent.com/nl-alexmok/tf_approval_demo/main/terraform-code/ec2_type_policy.sentinel"
+  enforcement_level = "hard-mandatory"
+}
+
 resource "aws_vpc" "main" {
   cidr_block       = "10.0.0.0/16"
   instance_tenancy = "default"
@@ -70,7 +75,7 @@ resource "aws_security_group" "allow_ssh" {
 
 resource "aws_instance" "demo_ec2" {
   ami                         = "ami-0dc2d3e4c0f9ebd18"
-  instance_type               = "t3.nano"
+  instance_type               = "t2.large"
   key_name                    = "alex-key"
   associate_public_ip_address = true
   subnet_id                   = "${aws_subnet.public_a.id}"
